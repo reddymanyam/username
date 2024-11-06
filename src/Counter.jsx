@@ -10,10 +10,10 @@ const Counter = () => {
   return (
    
     <div style={{backgroundColor:"lightblue",paddingRight:"50px"}}>
-      <h3>Counter:{value}</h3>
+      <h3>Counter:{count}</h3>
       <div>
         <button onClick={()=> dispatch(increment())} >Increment</button>
-        <button >Decrement</button>
+        <button onClick={()=> dispatch(decrement())}>Decrement</button>
       </div>
     </div>
 
