@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-const Sidebar = ({name, email}) => {
+const Sidebar = () => {
+
+  const name = useSelector((state)=> state.userupdate.name);
+  const email = useSelector((state)=> state.userupdate.email);
+  
   return (
     <div style={{display:"flex",flexDirection:"column",   width:"20%", backgroundColor:"lightcoral",top:"calc(100vh-60px)", textAlign:"center"}}>
         <h2>This is Sidebar</h2>

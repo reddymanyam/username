@@ -14,10 +14,10 @@ const Feed = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        dispatch(updateName(name));
-        dispatch(updateEmail(email));
-        setName("");
-        setEmail("");
+        dispatch(updateName(tempname));
+        dispatch(updateEmail(tempemail));
+        setTempname("");
+        setTempemail("");
     }
 
     const handleDelete = (e) =>{

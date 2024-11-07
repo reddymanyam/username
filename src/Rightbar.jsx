@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-const Rightbar = ({name, email}) => {
+const Rightbar = () => {
+
+  const name = useSelector((state)=> state.userupdate.name);
+  const email = useSelector((state)=> state.userupdate.email);
+  
   return (
     <div style={{width:"20%", backgroundColor:"lightcoral", textAlign:"center"}}>
       <h2>This is Rightbar</h2>
