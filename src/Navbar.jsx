@@ -1,6 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
-const Navbar = ({name, email}) => {
+const Navbar = () => {
+
+  const name = useSelector((state)=> state.userupdate.name);
+  const email = useSelector((state)=> state.userupdate.email);
+
   return (
     <div style={{backgroundColor:"lightblue", width:"100%", height:"60px"}}>
       <h1>My Name is:<span style={{fontSize:"large"}}>{name}</span></h1>
