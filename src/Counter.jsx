@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from './redux/slice/counterSlice';
+import { increment, decrement, reset } from './redux/slice/counterSlice';
 
 const Counter = () => {
 
-  const count = useSelector((state) => state.counter.value);
+  const count = useSelector((state) => state.counter.value);   // here counter is the reducer stored in the store
   const dispatch = useDispatch();
 
   return (
@@ -14,6 +14,7 @@ const Counter = () => {
       <div>
         <button onClick={()=> dispatch(increment())} >Increment</button>
         <button onClick={()=> dispatch(decrement())}>Decrement</button>
+        <button onClick={()=> dispatch(reset())}>Reset</button>
       </div>
     </div>
 

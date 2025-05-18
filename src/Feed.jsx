@@ -7,7 +7,7 @@ const Feed = () => {
     const[tempname, setTempname] = useState("");
     const[tempemail, setTempemail]= useState("");
 
-    const name = useSelector((state)=>state.userupdate.name);
+    const name = useSelector((state)=>state.userupdate.name);   // this will access the name from the userupdate reducer
     const email = useSelector((state)=>state.userupdate.email);
 
     const dispatch = useDispatch();

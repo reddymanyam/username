@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 const Navbar = () => {
 
-  const name = useSelector((state)=> state.userupdate.name);
+  const name = useSelector((state)=> state.userupdate.name);   // here userupdate is the reducer stored in the store.
   const email = useSelector((state)=> state.userupdate.email);
 
   return (
