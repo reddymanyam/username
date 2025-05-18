@@ -1,8 +1,25 @@
-# React + Vite
+## points to remember 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### dispatch
 
-Currently, two official plugins are available:
+- dispatch sends an action to the store, which passes it to the appropriate slice reducer. Inside the slice, the correct case reducer runs to update the state.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- So yes, dispatch triggers a case reducer, but not directly.
+
+- It goes:
+- dispatch(action) → store → root reducer → slice reducer → case reducer (like updateName)
+
+### useSelector
+
+- useSelector reads data from the current Redux store state. It does not trigger or involve any reducer.
+
+- It just accesses state.userupdate.name, like reading from a plain object.
+
+- Reducers only run when an action is dispatched.
+
+
+- dispatch sends an action to the store, which passes it to the appropriate slice's case reducer to update the state.     useSelector simply reads the latest state from the store — it does not involve reducers at all.
+
+- dispatch = triggers reducers
+
+- useSelector = reads from store (no reducers involved)
